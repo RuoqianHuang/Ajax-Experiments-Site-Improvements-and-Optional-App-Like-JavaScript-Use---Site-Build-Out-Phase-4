@@ -28,7 +28,7 @@
     align-items: center;
   }
   
-  header img {
+  img[alt="me"] {
     width: 50vw;
     height: 90vh;
   }
@@ -96,11 +96,11 @@
   }
   
   /* Transitions */
-  header img {
+  img[alt="me"] {
     transition: all 0.5s ease-in-out;
   }
   
-  header img:hover {
+  img[alt="me"]:hover {
     transform: scale(1.2);
   }
   
@@ -198,7 +198,7 @@
   }
   
   @media (max-width: 768px) {
-    header img {
+    img[alt="me"] {
       width: 70vw;
       height: 60vh;
     }
