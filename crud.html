@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="author" content="Ruoqian Huang">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog CRUD</title>
+  </head>
+  <body>
+    <h1>Blog CRUD</h1>
+    <form>
+      <input type="text" id="title" placeholder="Enter Title" required>
+      <br>
+      <input type="date" id="date" placeholder="Enter Date" required>
+      <br>
+      <textarea id="summary" placeholder="Enter Summary" required></textarea>
+      <br>
+      <button type="submit" id="add-btn">Add</button>
+    </form>
+    <dialog id="confirm-delete" class="modal">
+      <div class="modal-content">
+        <p>Are you sure you want to delete?</p>
+        <div class="modal-buttons">
+          <button id="delete-ok">OK</button>
+          <button id="delete-cancel">Cancel</button>
+        </div>
+      </div>
+    </dialog>
+    <dialog id="edit-post" class="modal">
+      <div class="modal-content">
+        <h2>Edit Post</h2>
+        <form>
+          <label for="edit-title">Title:</label>
+          <input type="text" id="edit-title" name="edit-title">
+          <br>
+          <label for="edit-date">Date:</label>
+          <input type="date" id="edit-date" name="edit-date">
+          <br>
+          <label for="edit-summary">Summary:</label>
+          <textarea id="edit-summary" name="edit-summary"></textarea>
+          
+          <div class="modal-buttons">
+            <button id="update-edit">Update</button>
+            <button id="cancel-edit">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </dialog>    
+    <hr>
+    <div id="posts-list"></div>
+    <script src="blog.js"></script>
+  </body>
+</html>

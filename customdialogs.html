@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Custom Dialogs</title>
+    <script src=node_modules/dompurify/dist/purify.min.js></script>
+    <script type="module">
+      import * as customdialog from "./customdialog.js";
+      
+      const alertBtn = document.getElementById("alertBtn");
+      alertBtn.addEventListener("click", () => {
+        customdialog.showAlertDialog("Alert Pressed!");
+        document.getElementById("customAlert").showModal();
+      });
+
+      const confirmBtn = document.getElementById("confirmBtn");
+      confirmBtn.addEventListener("click", () => {
+        customdialog.showConfirmDialog("Do you confirm this?");
+        document.getElementById("customConfirm").showModal();
+      });
+
+      const promptBtn = document.getElementById("promptBtn");
+      promptBtn.addEventListener("click", () => {
+        customdialog.showPromptDialog("What is your name?");
+        document.getElementById("customPrompt").showModal();
+      });
+    </script>
+  </head>
+  <body>
+    <dialog id="customAlert">
+      <p></p>
+      <button id="customAlertBtn">OK</button>
+    </dialog>
+    <button id="alertBtn">Alert</button>
+
+    <dialog id="customConfirm">
+      <p></p>
+      <button id="customConfirmCancel">Cancel</button>
+      <button id="customConfirmOK">OK</button>
+    </dialog>
+    <button id="confirmBtn">Confirm</button>
+
+    <dialog id="customPrompt">
+      <p></p>
+      <input type="text" id="inputText">
+      <button id="customPromptCancel">Cancel</button>
+      <button id="customPromptOK">OK</button>
+    </dialog>
+    <button id="promptBtn">Prompt</button>
+
+    <output id="output"></output>
+  </body>
+  
+</html>
+
+
+

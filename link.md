@@ -1,7 +1,3 @@
-# Name
-Ruoqian Huang
-# PID
-A16489764
 # Links
 ## Part 1: Simple Dialogs link: 
 ## Part 2: Custom Dialog link: 

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Simple Dialogs?</title>
+  <script src=node_modules/dompurify/dist/purify.min.js></script>
+  <script>
+    const showAlert = () => window.alert("Alert pressed!");
+    const showConfirm = () => {
+      const confirmed = window.confirm("Do you confirm this?");
+      const output = document.getElementById("output");
+      output.textContent = `Confirm result: ${confirmed}`;
+    };
+    const showPrompt = () => {
+      const input = window.prompt("What is your name?");
+      const output = document.getElementById("output");
+      if (input === null || input == "") {
+        output.textContent = "User didn't enter anything";
+      } else {
+        output.innerHTML = `Prompt result: ${input}`;
+      }
+    };
+    const showSaferPrompt = () => {
+      const input = window.prompt("What is your name?");
+      const output = document.getElementById("output");
+      if (input === null || input == "") {
+        output.textContent = "User didn't enter anything";
+      } else {
+        output.innerHTML = `Prompt result: ${DOMPurify.sanitize(input)}`;
+      }
+    };
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const alertBtn = document.getElementById("alert");
+      alertBtn.addEventListener("click", showAlert);
+      const confirmBtn = document.getElementById("confirm");
+      confirmBtn.addEventListener("click", showConfirm);
+      const promptBtn = document.getElementById("prompt");
+      promptBtn.addEventListener("click", showPrompt);
+      const saferPromptBtn = document.getElementById("safer-prompt");
+      saferPromptBtn.addEventListener("click", showSaferPrompt);
+    });
+  </script>
+</head>
+<body>
+  <h1>Simple Dialogs?</h1>
+  <button id="alert">Alert</button>
+  <button id="confirm">Confirm</button>
+  <button id="prompt">Prompt</button>
+  <button id="safer-prompt">Safer Prompt</button>
+  <output id="output"></output>
+  <hr>
+</body>
+</html>

@@ -9,22 +9,21 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <nav>
-        <input type="checkbox" id="menu-toggle">
+    <section class="top-nav">
+        <input id="menu-toggle" type="checkbox" />
         <label class='menu-button-container' for="menu-toggle">
-            <div class='menu-button'></div>
-        </label>
-        <ul class="menu">
-            <li><a href="#bio">BIO/EDUCATION</a></li>
-            <li><a href="#interests">INTERESTS</a></li>
-            <li><a href="#projects">PROJECTS</a></li>
-            <li><a href="#blogs">BLOGS</a></li>
-        </ul>
-    </nav>
-
+        <div class='menu-button'></div>
+      </label>
+      <ul class="menu">
+        <li><a href="#bio">BIO/EDUCATION</a></li>
+        <li><a href="#interests">INTERESTS</a></li>
+        <li><a href="#projects">PROJECTS</a></li>
+        <li><a href="styledcrud.html">BLOGS</a></li>
+      </ul>
+    </section>
     <main>
     <header>
-    <img src="Ruoqian.jpg" alt="me" width="600" height="700">
+    <img src="Ruoqian.jpg" alt="me">
     <h1>RUOQIAN HUANG</h1>
     <h2>Getting to know me!</h2>
     <h3>From Shenzhen, China</h3>
@@ -32,19 +31,19 @@
     <script>
         var c = document.getElementById("myLogo");
         var logo = c.getContext("2d");
-        logo.fillStyle = "rgb(117, 171, 217)";
-        logo.fillRect(0, 0, 100, 100);
+        logo.fillStyle = "rgb(114, 219, 251)";
+        logo.fillRect(50, 50, 100, 100);
     </script>
     </header>
     <hr>
     <section id="bio">
         <h4>BIO/EDUCATION</h4>
-        <p>A Math-Computer Science major student from UCSD and would graduate in 2024. </p>
-        <a href="https://ucsd.edu/">
+        <p class="reveal">A Math-Computer Science major student from UCSD and would graduate in 2024. </p>
+        <a href="https://ucsd.edu/" class="reveal">
             <img src="giphy.gif" alt="UCSD" height="200" width="200">
         </a>
       <aside>
-        <table>
+        <table class="reveal">
             <caption>Grades</caption>
             <colgroup>
                 <col span="2">
@@ -63,34 +62,34 @@
             </tr>
         </table>
       </aside>
-      <p>I am willing to take challenges and I have a rich life experience:</p>
-      <pre>
+      <p class="reveal">I am willing to take challenges and I have a rich life experience:</p>
+      <pre class="reveal">
       <strong>I have been living in:</strong>
       China for <b>15</b> years
       Canada for <b>3</b> years
       United States for <b>3</b> years<em> (ing!)</em>
       </pre>
     </section>
-    <fieldset>
+    <fieldset class="reveal">
         <p>My Skills: </p>
-        <input type="checkbox" id="c" name="language" value="C">
+        <input type="checkbox" id="c" name="language" value="C" checked>
         <label for="c">C</label>
-        <input type="checkbox" id="java" name="language" value="Java">
+        <input type="checkbox" id="java" name="language" value="Java" checked>
         <label for="java">Java</label>
-        <input type="checkbox" id="c++" name="language" value="C++">
+        <input type="checkbox" id="c++" name="language" value="C++" checked>
         <label for="c++">C++</label>
-        <input type="checkbox" id="python" name="language" value="Python">
+        <input type="checkbox" id="python" name="language" value="Python" checked>
         <label for="python">Python</label>
-        <input type="checkbox" id="javascript" name="language" value="Javascript">
+        <input type="checkbox" id="javascript" name="language" value="Javascript" checked>
         <label for="python">Javascript</label>
-        <input type="checkbox" id="css" name="language" value="CSS">
+        <input type="checkbox" id="css" name="language" value="CSS" checked>
         <label for="python">CSS</label>
-        <input type="checkbox" id="html" name="language" value="Html">
+        <input type="checkbox" id="html" name="language" value="Html" checked>
         <label for="python">HTML</label>
     </fieldset>
     
     <hr>
-    <section id="interests">
+    <section id="interests" class="reveal">
         <h4>INTERESTS</h4>
         <div class="row">
             <div class="column">
@@ -98,7 +97,7 @@
               <div class="textOnTop">Sports</div>
             </div>
             <div class="column">
-              <img src="music.jpg" alt="Music" style="width:100%">
+              <img src="band.jpg" alt="Music" style="width:100%">
               <div class="textOnTop">Music</div>
             </div>
             <div class="column">
@@ -106,74 +105,28 @@
               <div class="textOnTop">Travel</div>
             </div>
         </div>
-        <picture>
-            <source media="(min-width:600px)" srcset="img2.webp">
-            <source media="(min-width:400px)" srcset="img3.jpg">
-            <img src="img2.webp" alt="scenery" style="width:40%;">
-        </picture>
         <br>
     </section>
     <hr>
     <section id="projects">
         <h4>PROJECTS</h4>
-        <ol>
+        <ol class="reveal">
             <li>Personal website</li>
             <li>Group project: TO-DO List Web App</li>
         </ol>
-        <iframe src="https://cse110-fa22-group26.github.io/cse110-fa22-group26/source/welcomePage.html" width="900"  height="500"></iframe>
-        <video src="./video.mp4" controls></video>
-        <p><i>(This is only the beginning of the video. Contact me if you are interested in this project.)</i></p>
+        <iframe src="https://cse110-fa22-group26.github.io/cse110-fa22-group26/source/welcomePage.html" width="800"  height="500" class="reveal"></iframe>
+        <video src="./video.mp4" controls class="reveal"></video>
+        <p class="reveal"><i>(This is only the beginning of the video. Contact me if you are interested in this project.)</i></p>
     </section>
     <hr>
-    </main>
-    <section id="blogs">
-        <h4>BLOGS</h4>
-        <details>
-            <summary>Note</summary>
-            This is for recording daily thoughts, <span>not</span> mandatory.
-        </details>
-        <form>
-            <fieldset>
-            <legend>Today ...</legend>
-            <label for="weather">Weather: </label>
-            <input list="weathers" id="weather" name="weather">
-            <datalist id="weathers">
-                <option value="Sunny"></option>
-                <option value="Cloudy"></option>
-                <option value="Windy"></option>
-            </datalist>
-            <br>
-            <label for="moods">Mood:</label>
-            <select id="moods" name="moods">
-                <optgroup label="General">
-                    <option value="good">Good</option>
-                    <option value="medium">Medium</option>
-                    <option value="bad">Bad</option>
-                </optgroup>
-                <optgroup label="Specific">
-                    <option value="excited">Excited</option>
-                    <option value="nervous">Nervous</option>
-                    <option value="other">Other</option>
-                </optgroup>
-                
-            </select>
-            </fieldset>
-            <label for="comments">Leave my thoughts here:</label>
-            <br>
-            <textarea id="comments" name="comments" rows="10" cols="50">Today I ......</textarea>
-            <div>
-                <label for="Date">Date: </label>
-                <input type="date" id="Date" name="Date" value="2022-10-06" min="2023-01-01" max="2023-04-01">
-                <input type="button" value="Save all results">
-            </div>
-        </form>
-    </section>
     <template>
         <h4>Template</h4>
     </template>
-    <h4>Useful resources for building this page:</h4>
+    <h4>Contact Information</h4>
+    </main>
     <footer>
-        <p><i>Contact: ruoqianhuang@gmail.com</i></p>
+        <p><i>Email: ruoqianhuang@gmail.com</i></p>
     </footer>
+    <script src="main.js"></script>
   </body>
 </html>
