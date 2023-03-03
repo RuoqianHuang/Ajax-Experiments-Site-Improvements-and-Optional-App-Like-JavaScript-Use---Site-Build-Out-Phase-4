@@ -2,9 +2,5 @@
 Ruoqian Huang
 # PID
 A16489764
-# Links
-## Part 1: Simple Dialogs link: 
-## Part 2: Custom Dialog link: 
-## Part 3: Blog CRUD link:
-## Part 4: Styled Blog CRUD link:
-## Part 5: Personal portfolio website link: 
+# Personal portfolio website link: 
+https://ruoqianhuang.github.io/CSE134B_website_JS/
