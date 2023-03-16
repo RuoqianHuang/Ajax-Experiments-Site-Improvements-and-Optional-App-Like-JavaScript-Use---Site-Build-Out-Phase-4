@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Method Test</title>
+    <style>
+		output {
+			white-space: pre;
+		}
+	</style>
+</head>
+<body>
+	<h1>Method Test</h1>
+	<form id="articleForm">
+		<label for="id">ID:</label>
+		<input type="number" id="id" name="id" required><br>
+
+		<label for="article_name">Article Name:</label>
+		<input type="text" id="article_name" name="article_name" required><br>
+
+		<label for="article_body">Article Body:</label>
+		<textarea id="article_body" name="article_body" required></textarea><br>
+
+		<label for="date">Date:</label>
+		<br>
+
+		<button type="button" id="postBtn">postBtn</button>
+		<button type="button" id="getBtn">getBtn</button>
+		<button type="button" id="putBtn">putBtn</button>
+		<button type="button" id="deleteBtn">deleteBtn</button>
+	</form>
+
+	<output id="response"></output>
+
+	<script>
+        let articleForm = document.getElementById('articleForm');
+		let responseOutput = document.getElementById('response');
+
+		// document.getElementById('date').value = new Date();
+
+		document.getElementById('postBtn').addEventListener('click', function() {
+			let formData = new FormData(articleForm);
+			formData.append('date', new Date());
+			fetch('https://httpbin.org/post', {
+				method: 'POST',
+				body: formData
+			})
+			.then(response => response.json())
+			.then(data => {
+				responseOutput.innerHTML = JSON.stringify(data, null, 2);
+			})
+			.catch(error => console.error(error));
+		});
+
+		document.getElementById('getBtn').addEventListener('click', function() {
+			let id = document.getElementById('id').value;
+			fetch(`https://httpbin.org/get?id=${id}`)
+			.then(response => response.json())
+			.then(data => {
+				responseOutput.innerHTML = JSON.stringify(data, null, 2);
+			})
+			.catch(error => console.error(error));
+		});
+
+		document.getElementById('putBtn').addEventListener('click', function() {
+			let formData = new FormData(articleForm);
+			formData.append('date', new Date());
+			fetch('https://httpbin.org/put', {
+				method: 'PUT',
+				body: formData
+			})
+			.then(response => response.json())
+			
+            .then(data => {
+			    responseOutput.innerHTML = JSON.stringify(data, null, 2);
+            })
+            .catch(error => console.error(error));
+        });
+
+        document.getElementById('deleteBtn').addEventListener('click', function() {
+            let id = document.getElementById('id').value;
+            fetch(`https://httpbin.org/delete?id=${id}`, {
+                method: 'DELETE'
+            })
+            .then(response => response.json())
+            .then(data => {
+                responseOutput.innerHTML = JSON.stringify(data, null, 2);
+            })
+            .catch(error => console.error(error));
+        });
+    </script>
+</body>
+</html>
