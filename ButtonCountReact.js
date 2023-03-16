@@ -10,15 +10,15 @@ class ButtonCountReact extends React.Component {
   }
   
   render() {
-    return (
-    	<div>
-        <button onClick={this.buttonClicked}>Times Clicked: {this.state.value}</button>
-      </div>
+    return React.createElement(
+      'div',
+      null,
+      React.createElement(
+        'button',
+        { onClick: this.buttonClicked },
+        'Times Clicked: ',
+        this.state.value
+      )
     );
   }
 }
-
-ReactDOM.render(
-  <ButtonCountReact />,
-  document.getElementById('root')
-);
